@@ -1,0 +1,51 @@
+﻿% !TeX root = ../main.tex
+% ============================================================
+%   PAGE DE GARDE
+% ============================================================
+
+\begin{titlepage}
+  \thispagestyle{empty}
+
+  \vspace{2cm}
+
+  \begin{center}
+    \includegraphics[height=1.7cm]{\LogoHEIG}
+    \hspace{5cm}
+    \includegraphics[height=1.7cm]{\LogoHESSO}
+  \end{center}
+
+  \vspace{3cm}
+
+  \begin{center}
+    {\color{BoxBorder}\rule{0.62\textwidth}{1.4pt}\par}
+  \end{center}
+
+  \vspace{0.6cm}
+
+  \begin{center}
+    {\Huge\bfseries\color{HeigBlue}\TitreRapport\par}
+    \vspace{0.7cm}
+    {\Large\itshape\color{HeigGrey}\SousTitre\par}
+    \vspace{1.2cm}
+    {\Large\bfseries\Expedition\par}
+    \vspace{0.9cm}
+    {\large\Auteurs\par}
+    \vspace{0.7cm}
+    {\large\color{HeigGrey}Laboratoire effectué le \DateTP{} \qquad Rapport rendu le \DateRendu{}\par}
+  \end{center}
+
+  \vfill
+
+  \begin{center}
+    \begingroup
+      \edef\temp{\ImageSujet}%
+      \ifx\temp\empty
+        % rien
+      \else
+        \includegraphics[width=0.7\textwidth]{\ImageSujet}
+      \fi
+    \endgroup
+  \end{center}
+
+  \vfill
+\end{titlepage}

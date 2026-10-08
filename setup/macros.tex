@@ -1,0 +1,137 @@
+﻿% ============================================================
+%  MACROS PERSONNALISEES
+% ============================================================
+
+% --- Indentation de bloc pour sections ---
+\newenvironment{sectionblock}{%
+  \begin{adjustwidth}{1.5cm}{0cm}%
+}{%
+  \end{adjustwidth}%
+}
+
+% --- Valeurs et incertitudes (siunitx-friendly) ---
+\newcommand{\val}[2]{\SI{#1}{#2}}
+\newcommand{\valinc}[3]{\SI{#1 +- #2}{#3}}
+\newcommand{\valrel}[4]{\SI{#1 +- #2}{#3}\ (\SI{#4}{\percent})}
+\newcommand{\urel}[2]{\SI{#1}{#2}}
+\newcommand{\ecartRel}[1]{\SI{#1}{\percent}}
+\newcommand{\zscore}[1]{\ensuremath{z=\num{#1}}}
+
+% --- Equations avec legende ---
+\newcommand{\eqleg}[2]{%
+  \begin{equation}\label{#1}
+    #2
+  \end{equation}
+  \noindent\small\textit{Legende (Eq.~\ref{#1}) :}\quad
+}
+
+% --- References intelligentes ---
+\newcommand{\figref}[1]{\cref{fig:#1}}
+\newcommand{\tabref}[1]{\cref{tab:#1}}
+\newcommand{\secref}[1]{\cref{sec:#1}}
+
+% --- Boite equation inline (style sobre) ---
+\newtcbox{\eqinline}{
+  on line,
+  enhanced,
+  colback=black!4,
+  colframe=black!30,
+  sharp corners,
+  boxrule=0.5pt,
+  left=6pt,
+  right=6pt,
+  top=2pt,
+  bottom=2pt,
+  nobeforeafter,
+  tcbox raise base
+}
+\newcommand{\eqbox}[1]{\eqinline{$\displaystyle #1$}}
+
+% --- Boites d'information ---
+\newtcolorbox{boxinfo}{
+  colback=BoxBg,
+  colframe=BoxBorder,
+  boxrule=0.85pt,
+  left=7pt,
+  right=7pt,
+  top=6pt,
+  bottom=6pt,
+  arc=0.6mm
+}
+
+% --- Marqueurs de travail ---
+\newcommand{\todo}[1]{\textcolor{HighlightRed}{\textbf{[TODO : #1]}}}
+\newcommand{\exemple}[1]{{\color{HighlightBlueVivid}\itshape #1}}
+\newcommand{\fictif}[1]{\textcolor{HighlightBlueVivid}{#1}}
+
+% --- Resultats encadres ---
+\newenvironment{resultkey}[2]{%
+  \begin{tcolorbox}[
+    colback=HeigBlueLight,
+    colframe=BoxBorder,
+    boxrule=0.9pt,
+    arc=0.6mm,
+    title=\textbf{#1},
+    fonttitle=\sffamily\bfseries,
+    coltitle=white,
+    colbacktitle=BoxBorder,
+    breakable
+  ]
+    \large $\boxed{#2}$
+    \par\vspace{4pt}
+}{%
+  \end{tcolorbox}
+}
+
+% --- Environnements pour info et attention ---
+\newtcolorbox{info}{
+  colback=BoxBg,
+  colframe=BoxBorder,
+  boxrule=0.85pt,
+  left=7pt,
+  right=7pt,
+  top=6pt,
+  bottom=6pt,
+  title=Remarque,
+  fonttitle=\sffamily\bfseries,
+  coltitle=white,
+  colbacktitle=BoxBorder,
+  arc=0.6mm,
+  breakable
+}
+
+\newtcolorbox{attention}{
+  colback=HighlightOrangeVivid!8,
+  colframe=HighlightOrangeVivid,
+  boxrule=0.9pt,
+  left=7pt,
+  right=7pt,
+  top=6pt,
+  bottom=6pt,
+  title=Attention,
+  fonttitle=\sffamily\bfseries,
+  coltitle=white,
+  colbacktitle=HighlightOrangeVivid,
+  arc=0.6mm,
+  breakable
+}
+
+% --- Compatibilite anciennes macros ---
+\newcommand{\valeur}[2]{\SI{#1}{#2}}
+
+% --- Macros orientees rapport d'ingenierie ---
+\newcommand{\req}[2]{\noindent\textbf{Exigence #1.}\ #2\par}
+\newcommand{\assump}[2]{\noindent\textbf{Hypothese #1.}\ #2\par}
+\newcommand{\decision}[2]{\noindent\textbf{Decision #1.}\ #2\par}
+\newcommand{\riskitem}[2]{\noindent\textbf{Risque #1.}\ #2\par}
+
+\newcommand{\resultatcle}[3]{%
+  \begin{tcolorbox}[colback=HeigBlueLight, colframe=BoxBorder, boxrule=0.9pt, arc=0.6mm]
+    \textbf{Resultat cle :} #1\\
+    \textbf{Valeur :} #2\\
+    \textbf{Confiance/limite :} #3
+  \end{tcolorbox}
+}
+
+\newcommand{\assetref}[2]{\texttt{#1} (\textit{#2})}
+\newcommand{\tracecmd}[1]{\texttt{#1}}

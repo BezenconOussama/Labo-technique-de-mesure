@@ -1,0 +1,98 @@
+% ============================================================
+%  CONFIGURATION DES POLICES
+% ============================================================
+% Objectif: rendu fiable en francais (accents, ligatures, ponctuation)
+
+\usepackage{unicode-math}
+\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+
+% --- Police principale (serif) ---
+% Rendu "rapport classique" proche du style de reference.
+\IfFontExistsTF{TeX Gyre Pagella}{
+  \setmainfont[Numbers=Proportional]{TeX Gyre Pagella}
+}{
+  \setmainfont[Numbers=Proportional]{Libertinus Serif}
+}
+
+% --- Sans-serif ---
+\IfFontExistsTF{Noto Sans}{
+  \setsansfont{Noto Sans}
+}{
+  \IfFontExistsTF{Source Sans 3}{
+    \setsansfont{Source Sans 3}
+  }{
+    \setsansfont{TeX Gyre Heros}
+  }
+}
+
+% --- Monospace ---
+\IfFontExistsTF{JetBrains Mono}{
+  \setmonofont[Scale=0.92]{JetBrains Mono}
+}{
+  \IfFontExistsTF{Noto Sans Mono}{
+    \setmonofont[Scale=0.94]{Noto Sans Mono}
+  }{
+    \setmonofont[Scale=0.95]{TeX Gyre Cursor}
+  }
+}
+
+% --- Math ---
+\IfFontExistsTF{TeX Gyre Pagella Math}{
+  \setmathfont{TeX Gyre Pagella Math}
+}{
+  \setmathfont{Libertinus Math}
+}
+
+% ========== Familles optionnelles (si présentes) ==========
+% Serif alternatives (Windows)
+\IfFontExistsTF{Georgia}{
+  \newfontfamily\GeorgiaFamily{Georgia}[Ligatures=TeX]
+}{
+  \newfontfamily\GeorgiaFamily{TeX Gyre Pagella}[Ligatures=TeX]
+}
+
+\IfFontExistsTF{Cambria}{
+  \newfontfamily\CambriaFamily{Cambria}[Ligatures=TeX]
+}{
+  \newfontfamily\CambriaFamily{TeX Gyre Pagella}[Ligatures=TeX]
+}
+
+% Sans-serif alternatives (Windows)
+\IfFontExistsTF{Arial}{
+  \newfontfamily\ArialFamily{Arial}[Ligatures=TeX]
+}{
+  \newfontfamily\ArialFamily{TeX Gyre Heros}[Ligatures=TeX]
+}
+
+\IfFontExistsTF{Corbel}{
+  \newfontfamily\CorbellFamily{Corbel}[Ligatures=TeX]
+}{
+  \newfontfamily\CorbellFamily{TeX Gyre Heros}[Ligatures=TeX]
+}
+
+% Monospace alternative (Windows)
+\IfFontExistsTF{Consolas}{
+  \newfontfamily\ConsolasFam{Consolas}[Scale=0.9]
+}{
+  \newfontfamily\ConsolasFam{TeX Gyre Cursor}[Scale=0.95]
+}
+
+% ========== Commandes pratiques ==========
+\newcommand{\HeadingFamily}{\sffamily}
+\newcommand{\BodyFamily}{\rmfamily}
+\newcommand{\CodeFamily}{\ttfamily}
+
+\newcommand{\arial}[1]{{\ArialFamily #1}}
+\newcommand{\corbel}[1]{{\CorbellFamily #1}}
+\newcommand{\georgia}[1]{{\GeorgiaFamily #1}}
+\newcommand{\cambria}[1]{{\CambriaFamily #1}}
+\newcommand{\consolastext}[1]{{\ConsolasFam #1}}
+
+\newcommand{\boldtext}[1]{\textbf{#1}}
+\newcommand{\boldserif}[1]{{\CambriaFamily\textbf{#1}}}
+\newcommand{\smallcapstext}[1]{\textsc{#1}}
+
+% Attention: \emp dépend de HeigBlue (défini dans colors.tex)
+\newcommand{\emp}[1]{\textit{\textcolor{HeigBlue}{#1}}}
+
+\newcommand{\citationtext}[1]{{\GeorgiaFamily\itshape\small«~#1~»}}

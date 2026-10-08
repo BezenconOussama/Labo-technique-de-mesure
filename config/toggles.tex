@@ -1,0 +1,22 @@
+% ============================================================
+%  TOGGLES DOCUMENTAIRES (structure modulable)
+% ============================================================
+
+% Front matter (page de titre / table des matieres)
+\newif\ifShowFrontMatter
+\ShowFrontMattertrue
+
+\newif\ifShowTOC
+\ShowTOCtrue
+
+% Corps principal
+\newif\ifShowMainContent
+\ShowMainContenttrue
+
+% Annexes
+\newif\ifShowAppendices
+\ShowAppendicestrue
+
+% Bloc d'insertion des sorties auto-generees (optionnel)
+\newif\ifShowGeneratedAssets
+\ShowGeneratedAssetsfalse

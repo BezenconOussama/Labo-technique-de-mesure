@@ -1,0 +1,59 @@
+﻿% !TeX program = xelatex
+% ============================================================
+%  Rapport de Laboratoire Physique - Architecture Modulaire
+%  HEIG-VD / HES-SO
+% ============================================================
+
+\documentclass[11pt,a4paper,oneside]{report}
+
+% ============= SETUP LaTeX (packages d'abord) =============
+% Load mathtools BEFORE unicode-math to avoid conflicts
+\usepackage{mathtools}
+\input{setup/preamble.tex}   % charge xcolor, hyperref, etc.
+\input{config/colors.tex}    % seulement \definecolor{...}
+\input{setup/fonts.tex}
+\input{setup/macros.tex}
+\input{setup/styles.tex}
+
+% ============= CONFIGURATIONS (dÃ©pendent parfois de hyperref) =============
+\input{config/metadata.tex}
+\input{config/paths.tex}
+\input{config/toggles.tex}
+
+% ============= BEGIN DOCUMENT =============
+\begin{document}
+
+% Page de titre sans numérotation
+\pagenumbering{gobble}
+
+% Pour compiler seulement certains chapitres:
+% \includeonly{content/03_mesures_resultats_analyse,content/04_discussion_generale_quantitative}
+
+\ifShowFrontMatter
+  \input{frontmatter/_frontmatter.tex}
+\fi
+
+% Commencer la numérotation romaine après la page de titre
+\cleardoublepage
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+\ifShowTOC
+  \input{frontmatter/toc.tex}
+\fi
+
+% Basculer à la numérotation arabe pour le contenu principal
+\cleardoublepage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\ifShowMainContent
+  \input{content/_content.tex}
+\fi
+
+\ifShowAppendices
+  \input{appendix/_appendix.tex}
+\fi
+
+\end{document}
+

@@ -1,0 +1,97 @@
+{
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 500,
+
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk-xelatex",
+      "command": "latexmk",
+      "args": [
+        "-xelatex",
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-outdir=%OUTDIR%",
+        "%DOC%"
+      ]
+    }
+  ],
+
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "latexmk (xelatex)",
+      "tools": ["latexmk-xelatex"]
+    }
+  ],
+
+  "latex-workshop.latex.recipe.default": "latexmk (xelatex)",
+  
+  // Compilation automatique instantanée à chaque modification de fichier
+  "latex-workshop.latex.autoBuild.run": "onFileChange",
+  "latex-workshop.latex.autoBuild.interval": 500,
+  "latex-workshop.latex.rootFile.useSubFile": false,
+  "latex-workshop.latex.rootFile.doNotPrompt": true,
+  "latex-workshop.latex.search.rootFiles.include": ["main.tex"],
+  "latex-workshop.latex.outDir": "%DIR%",
+
+  "latex-workshop.latex.clean.fileTypes": [
+    "*.aux",
+    "*.bbl",
+    "*.blg",
+    "*.fdb_latexmk",
+    "*.fls",
+    "*.log",
+    "*.out",
+    "*.synctex.gz",
+    "*.xdv"
+  ],
+
+  "latex-workshop.view.pdf.viewer": "tab",
+
+  // --- STOP LINTING ---
+  "latex-workshop.linting.enabled": false,
+  "latex-workshop.chktex.enabled": false,
+  "latex-workshop.lacheck.enabled": false,
+
+  "cSpell.import": [
+    "@cspell/dict-fr-fr/cspell-ext.json"
+  ],
+  "cSpell.language": "en, fr, fr_FR",
+  "cSpell.dictionaries": [
+    "fr-fr"
+  ],
+  "cSpell.enabledLanguageIds": [
+    "latex",
+    "plaintext",
+    "markdown"
+  ],
+  "cSpell.words": [
+    "CASSY",
+    "GeoGebra",
+    "HEIG",
+    "HES",
+    "HESSO",
+    "HEIGVD",
+    "LaTeX",
+    "latexmk",
+    "Modulaire",
+    "siunitx",
+    "xcolor",
+    "xdvipdfmx",
+    "xelatex"
+  ],
+
+  "[latex]": {
+    "editor.formatOnSave": false
+  },
+
+  "files.exclude": {
+    "**/*.aux": true,
+    "**/*.log": true,
+    "**/*.out": true,
+    "**/*.synctex.gz": true,
+    "**/*.xdv": true,
+    "**/*.fdb_latexmk": true,
+    "**/*.fls": true
+  }
+}

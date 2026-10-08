@@ -1,0 +1,42 @@
+% !TeX root = ../main.tex
+% ============================================================
+%   TABLE DES MATIÈRES
+% ============================================================
+
+\cleardoublepage
+\begingroup
+  % TOC plus stable : pas de césure + pas de lignes orphelines + pas d'étirement vertical excessif
+  \raggedbottom
+  \hyphenpenalty=10000
+  \exhyphenpenalty=10000
+  \clubpenalty=10000
+  \widowpenalty=10000
+  \displaywidowpenalty=10000
+  \tolerance=9999
+  \emergencystretch=2em
+  % Évite qu'un nouveau chapitre de la TOC arrive en bas de page avec une seule section.
+  \makeatletter
+  \let\origlchapter\l@chapter
+  \renewcommand*{\l@chapter}[2]{%
+    \needspace{8\baselineskip}%
+    \origlchapter{#1}{#2}%
+  }
+  \makeatother
+  \tableofcontents
+\endgroup
+
+\clearpage
+\begingroup
+  \let\clearpage\relax
+  \let\cleardoublepage\relax
+  \needspace{10\baselineskip}
+  \renewcommand{\listgraphiquename}{Liste des graphiques}
+  \listofgraphiques
+\endgroup
+
+\begingroup
+  \let\clearpage\relax
+  \let\cleardoublepage\relax
+   \needspace{10\baselineskip}
+  \listoftables
+\endgroup

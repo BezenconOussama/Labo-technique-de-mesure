@@ -1,0 +1,68 @@
+﻿% ============================================================
+%  STYLES & ENVIRONNEMENTS PERSONNALISES
+% ============================================================
+
+% --- Format des chapitres ---
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\HeadingFamily\bfseries\Huge\color{Slate}}
+  {{\fontsize{34}{38}\selectfont\thechapter}}{0.65em}
+  {\MakeUppercase}
+  [\rule{\linewidth}{1.2pt}]
+\titlespacing*{\chapter}{0pt}{24pt}{20pt}
+
+% --- Format des sections ---
+\titleformat{\section}[block]
+  {\HeadingFamily\Large\bfseries\color{Slate}}
+  {\thesection}{0.65em}{\raggedright}
+\titlespacing*{\section}{0pt}{10pt}{15pt}
+
+% --- Format des subsections ---
+\titleformat{\subsection}
+  {\HeadingFamily\large\bfseries\color{Slate}}{\thesubsection}{0.65em}{}
+\titlespacing*{\subsection}{0pt}{10pt}{10pt}
+
+% --- Listes personnalisees ---
+\setlist[itemize]{label=\textbullet, leftmargin=1.2em, itemsep=0.15em, topsep=0.15em}
+\setlist[enumerate]{label=\arabic*., leftmargin=1.5em, itemsep=0.15em, topsep=0.15em}
+
+% --- Rendu technique des tableaux ---
+\renewcommand{\arraystretch}{1.12}
+\setlength{\tabcolsep}{6pt}
+\arrayrulecolor{SoftLine}
+
+% --- Styles de texte enrichis ---
+\newcommand{\titleaccent}[1]{{\HeadingFamily\large\bfseries\color{Slate}#1}}
+\newcommand{\subtitle}[1]{{\itshape\color{HeigGrey}\normalsize#1}}
+\newcommand{\technical}[1]{{\ConsolasFam\textbf{#1}}}
+\newcommand{\styleit}[1]{{\GeorgiaFamily\itshape#1}}
+
+% --- Helpers pour structure E4 ---
+\newcommand{\manip}[1]{\par\medskip\noindent{\bfseries\color{HeigBlue}#1}\par\smallskip}
+\newcommand{\objectif}[1]{\noindent\textit{Objectif :} #1\par\smallskip}
+
+% --- Environnement pour donnees brutes ---
+\newenvironment{donneesbrutes}{%
+  \vspace{0.6cm}\noindent\textbf{\large Donnees brutes :}\par\vspace{0.2cm}
+  \small
+}{%
+  \vspace{0.6cm}
+}
+
+% --- Environnement de citation stylisee ---
+\newenvironment{citationstyle}{%
+  \vspace{0.5cm}
+  \noindent\hspace{1cm}\begin{minipage}{0.8\linewidth}
+  \itshape\normalsize\color{HeigGrey}
+}{%
+  \end{minipage}\vspace{0.3cm}
+}
+
+% --- Bloc de definition ---
+\newenvironment{definition}[1]{%
+  \vspace{0.5cm}\noindent
+  \textbf{\large Definition :} \quad {\CambriaFamily\itshape#1}
+  \par\vspace{0.2cm}\small
+}{%
+  \vspace{0.3cm}
+}

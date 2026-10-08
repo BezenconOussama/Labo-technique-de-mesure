@@ -11,3 +11,14 @@ Gradient séléctionné :
 (ValMes - ValMoyNom) / penteMoy + TempGrad20 // on est plus proche de 20 C°
 
 103.6-97.2 / (4.7 + 3.63) + 20 = 21.53 C°
+
+Aquisition 1.2
+Val res série 462.349 kOhm;
+
+Daq Num 11
+Ordi : C05PC07-7
+
+Alimnetation GW instek GPD-3303S
+AT-M10-16E-10 National Instruments DAQ
+Key Sight 34460A 6 1/2 Digit
+ 

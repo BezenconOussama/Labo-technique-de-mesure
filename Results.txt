@@ -1,0 +1,13 @@
+Mesure manuelle 1.1
+Valeur mesurée
+97.2kOhm
+d'aprés la datasheet
+Valeur moyenne nominal : 103,6 kOhm
+
+
+Gradient séléctionné :
+20 à 25 degrés -> pente de 4.7 kOhm / C° pour 20C° et pente de 3.63 kOhm / C° pour 25C°
+
+(ValMes - ValMoyNom) / penteMoy + TempGrad20 // on est plus proche de 20 C°
+
+103.6-97.2 / (4.7 + 3.63) + 20 = 21.53 C°
